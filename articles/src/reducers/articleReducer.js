@@ -1,6 +1,6 @@
 import { Constants } from "./../constants/constants";
 
-const articles = (state = [], action) => {
+const articles = (state = [{}], action) => {
   // debugger;
   switch (action.type) {
     case Constants.actions.articles.ADD_ARTICLE:
