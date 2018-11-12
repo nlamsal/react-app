@@ -5,6 +5,10 @@ const articles = (state = [{}], action) => {
   switch (action.type) {
     case Constants.actions.articles.ADD_ARTICLE:
       return [...state, action.payload];
+
+    case Constants.actions.articles.FETCH_ARTICLES_SUCCESS:
+      console.log("response from the API is ", state, action);
+      return [...state, ...action.articles];
     default:
       return state;
   }

@@ -30,8 +30,14 @@ class NewArticle extends Component {
     const ID = uuidv1();
     this.setState({ id: ID });
     this.props.addArticle(this.state);
-    
-    this.setState({});
+    this.setState({
+      id: "",
+      title: "",
+      content: "",
+      author: {
+        name: ""
+      }
+    });
   }
 
   addAuthor(event) {
@@ -58,6 +64,7 @@ class NewArticle extends Component {
             <textarea
               className="form-control"
               id="content"
+              value={this.state.content}
               onChange={this.handleChange}
             />
           </div>
@@ -67,6 +74,7 @@ class NewArticle extends Component {
               type="text"
               className="form-control"
               id="author"
+              value={this.state.author.name}
               onChange={this.addAuthor}
             />
           </div>
