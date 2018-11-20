@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import "./Navbar.css";
+import { history } from "./../../helper/history";
 
 const Navbar = () => {
   return (
@@ -21,7 +22,7 @@ const Navbar = () => {
             </li>
 
             <li className="logout">
-              <a href="/login">Logout</a>
+              <a onClick={logout}>Logout</a>
             </li>
             {/* <li>
               <NavLink to="/list">View Articles</NavLink>
@@ -31,6 +32,11 @@ const Navbar = () => {
       </nav>
     </div>
   );
+};
+
+const logout = () => {
+  localStorage.clear();
+  history.push("/");
 };
 
 export default Navbar;

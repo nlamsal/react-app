@@ -5,8 +5,9 @@ import { addArticle } from "../../actions/articles-actions";
 import PropTypes from "prop-types";
 
 class NewArticle extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    alert("new article");
+    super(props);
     this.state = {
       id: "",
       title: "",

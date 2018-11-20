@@ -9,9 +9,6 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
-  console.log("dispatching ajax call");
-  console.log(ownProps);
-  // debugger;
   return {
     loadArticles: () => dispatch(fetchArticles())
   };
@@ -20,6 +17,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 class ConnectedList extends React.Component {
   constructor(props) {
     super(props);
+    // alert("list component called");
     console.log("logging props and state");
     console.log(this.props);
     this.props.loadArticles();

@@ -24,7 +24,7 @@ const initialState = {
 const reduxDevTools =
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__();
 
-const configureStore = initialState => {
+const configureStore = (initialState = []) => {
   return createStore(
     rootReducer,
     initialState,

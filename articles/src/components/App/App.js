@@ -5,7 +5,7 @@ import Navbar from "../Navbar/Navbar";
 import AppRoutes from "../Routes/AppRoutes";
 import { Router } from "react-router-dom";
 import { history } from "../../helper/history";
-import { PrivateRoute } from "./../Routes/PrivateRoute";
+import PrivateRoute from "./../Routes/PrivateRoute";
 import List from "./../List/List";
 import Login from "../Login/Login";
 import Article from "../Article/Article";
@@ -21,7 +21,6 @@ class App extends Component {
     history.listen((location, action) => {
       // clear alert on location change
       //dispatch(alertActions.clear());
-      
     });
   }
 

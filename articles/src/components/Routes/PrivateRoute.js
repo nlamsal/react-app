@@ -4,13 +4,12 @@ import { Route, Redirect } from "react-router-dom";
 
 export const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route
+    {...rest}
     render={props =>
       localStorage.getItem("user") ? (
-        <Component />
+        <Component {...props} />
       ) : (
-        <Redirect
-          to={{ pathname: "/login", state: { from: props.location } }}
-        />
+        <Redirect to={{ pathname: "/login", state: { from: props.path } }} />
       )
     }
   />
@@ -34,7 +33,7 @@ export const PrivateRoute = ({ component: Component, ...rest }) => (
 //             <Component {...props} />
 //           ) : (
 //             <Redirect
-//               to={{ pathname: "/login", state: { from: props.location } }}
+//               to={{ pathname: "/login", state: { from: props.path } }}
 //             />
 //           )
 //         }

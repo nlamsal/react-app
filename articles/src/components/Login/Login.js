@@ -5,6 +5,7 @@ import { loginActions } from "./../../actions/login-action";
 
 class LoginPage extends Component {
   constructor(props) {
+    localStorage.clear();
     super(props);
     console.log("props is ", props);
 
@@ -13,6 +14,7 @@ class LoginPage extends Component {
       password: ""
     };
     //this.props.actions.logout();
+
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
