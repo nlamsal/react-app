@@ -1,14 +1,18 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
-import Form from "../Form/NewArticle";
+import NewArticle from "../Form/NewArticle";
 import List from "./../List/List";
+import LoginForm from "./../Form/LoginForm";
 
 const AppRoutes = () => {
   return (
-    <Switch>
-      <Route exact path="/new" component={Form} />
-      <Route exact path="/list" component={List} />
-    </Switch>
+    <div>
+      <Switch>
+        <Route path="/" component={List} />
+        <Route path="/list" component={List} />
+        <Route path="/new" component={NewArticle} />
+      </Switch>
+    </div>
   );
 };
 

@@ -4,7 +4,7 @@ import { fetchArticles } from "../../actions/articles-actions";
 import articles from "./../../reducers/articleReducer";
 
 const mapStateToProps = state => {
-  console.log("articles are : ", state);
+  console.log("Fetched articles are : ", state);
   return { articles: state.articles };
 };
 
@@ -28,13 +28,28 @@ class ConnectedList extends React.Component {
   render() {
     const articles = this.props.articles;
     return (
-      <ul className="list-group list-group-flush">
-        {articles.map(el => (
-          <li className="list-group-item" key={el.id}>
-            {el.title}
-          </li>
-        ))}
-      </ul>
+      <div>
+        <table className="table table-striped">
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Description</th>
+              <th>Content</th>
+              <th>Author</th>
+            </tr>
+          </thead>
+          <tbody>
+            {articles.map(el => (
+              <tr key={el.id}>
+                <td>{el.title}</td>
+                <td>{el.description}</td>
+                <td>{el.content}</td>
+                <td>{el.author}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     );
   }
 }

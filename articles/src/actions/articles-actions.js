@@ -6,6 +6,7 @@ export const addArticle = article => ({
 });
 
 export function fetchArticles() {
+  console.log("fetching articles");
   return {
     type: "FETCH_ARTICLES"
   };

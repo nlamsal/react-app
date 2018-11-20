@@ -7,11 +7,11 @@ const sagaMiddleware = createSagaMiddleWare();
 
 const initialState = {
   articles: [
-    {
-      title: "New Article",
-      id: "4308cfc1…5dba792f",
-      author: { name: "Neerajan Lamsal", id: "1" }
-    }
+    // {
+    //   title: "",
+    //   id: "",
+    //   author: { name: "", id: "" }
+    // }
   ]
 };
 

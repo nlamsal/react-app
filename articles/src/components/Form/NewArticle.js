@@ -15,7 +15,7 @@ class NewArticle extends Component {
         name: ""
       }
     };
-
+    console.log("new article");
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.addAuthor = this.addAuthor.bind(this);
