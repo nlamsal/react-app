@@ -1,24 +1,45 @@
 import React, { Component } from "react";
-import logo from "../../logo.svg";
 import "./App.css";
+import { Switch, Route } from "react-router-dom";
+import Navbar from "../Navbar/Navbar";
+import AppRoutes from "../Routes/AppRoutes";
+import { Router } from "react-router-dom";
+import { history } from "../../helper/history";
+import PrivateRoute from "./../Routes/PrivateRoute";
 import List from "./../List/List";
-import Form from "./../Form/Form";
+import Login from "../Login/Login";
+import Article from "../Article/Article";
+import NewArticle from "../Form/NewArticle";
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+
+    const { dispatch } = this.props;
+
+    console.log("App js ", this.props);
+    history.listen((location, action) => {
+      // clear alert on location change
+      //dispatch(alertActions.clear());
+    });
+  }
+
   render() {
     return (
-      <div className="row mt-5">
-        <div className="col-md-4 offset-md-1">
-          <h2>Add a new article</h2>
-          <Form />
-        </div>{" "}
-        <div className="col-md-4 offset-md-1">
-          <h2>Articles</h2>
-          <List />
+      <Router history={history}>
+        <div className="container">
+          <PrivateRoute path="/" component={Article} />
+          <Route path="/login" component={Login} />
         </div>
-      </div>
+      </Router>
     );
   }
 }
 
 export default App;
+
+{
+  /* <Router history={history}>
+  <div />
+</Router>; */
+}
